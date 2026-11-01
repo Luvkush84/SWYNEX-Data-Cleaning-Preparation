@@ -1,10 +1,10 @@
-# Task 1: Data Cleaning & Preparation
+# SWYNEX Internship – Task 1: Data Cleaning & Preparation
 
 ## Project Overview
 
 This project focuses on cleaning and preparing the UCI Online Retail dataset using Python and Pandas.
 
-The objective is to identify and handle missing values, duplicate records, inconsistent text, and data quality issues to make the dataset suitable for further analysis.
+The objective is to identify and handle missing values, duplicate records, incorrect data types, inconsistent text, and data quality issues.
 
 ## Dataset Information
 
@@ -12,9 +12,9 @@ The objective is to identify and handle missing values, duplicate records, incon
 * **Source:** UCI Machine Learning Repository
 * **Original Records:** 541,909
 * **Columns:** 8
-* **File Format:** Excel (.xlsx)
+* **Original Format:** Excel (.xlsx)
 
-### Dataset Columns
+## Dataset Columns
 
 1. InvoiceNo
 2. StockCode
@@ -44,30 +44,15 @@ The objective is to identify and handle missing values, duplicate records, incon
 
 ## Data Cleaning Steps
 
-### 1. Missing Values
-
-* Replaced missing Description values with "Unknown Product".
-* Retained missing CustomerID values because customer information was unavailable.
-
-### 2. Duplicate Records
-
-* Identified 5,268 duplicate rows.
-* Removed all duplicate rows.
-
-### 3. Data Type Correction
-
-* Converted CustomerID from float to string.
-* Kept InvoiceDate in datetime format.
-
-### 4. Text Cleaning
-
-* Removed unnecessary leading and trailing spaces from Description and Country.
-
-### 5. Quantity and UnitPrice Analysis
-
-* Identified negative Quantity values, which may represent returns or cancellations.
-* Identified zero UnitPrice records and retained them for further analysis.
-* Inspected two negative UnitPrice records. Both were related to "Adjust bad debt" accounting adjustments, so they were retained.
+1. Replaced missing Description values with `Unknown Product`.
+2. Retained missing CustomerID values because customer information was unavailable.
+3. Removed 5,268 duplicate records.
+4. Converted CustomerID from float to string.
+5. Kept InvoiceDate in datetime format.
+6. Removed unnecessary leading and trailing spaces from Description and Country.
+7. Identified negative Quantity values that may represent returns or cancellations.
+8. Retained zero UnitPrice records for further analysis.
+9. Inspected two negative UnitPrice records related to `Adjust bad debt` accounting adjustments and retained them.
 
 ## Final Dataset Validation
 
@@ -82,48 +67,35 @@ The objective is to identify and handle missing values, duplicate records, incon
 | Missing CustomerID       |      135,037 |
 | Remaining Duplicate Rows |            0 |
 
-## Project Structure
+## Repository Files
 
-
-Task-1-Data-Cleaning/
-│
-├── data/
-│   └── Online retail.xlsx
-│
-├── notebooks/
-│   └── data_cleaning.ipynb
-│
-├── output/
-│   └── cleaned_online_retail.csv
-│
-└── README.md
-
+* `README.md` – Project documentation
+* `data_cleaning.ipynb` – Jupyter Notebook containing cleaning steps and analysis
+* `cleaned_online_retail.zip` – Compressed cleaned dataset
 
 ## How to Run This Project
 
-1. Clone or download this repository.
-2. Open the project in VS Code.
+1. Download or clone this repository.
+2. Extract `cleaned_online_retail.zip`.
 3. Install the required libraries:
 
+```bash
 pip install pandas openpyxl notebook
+```
 
-
-4. Open the Jupyter Notebook:
-
-notebooks/data_cleaning.ipynb
-
-
-5. Run all notebook cells from top to bottom.
-
-6. Find the cleaned dataset inside the `output` folder.
+4. Open `data_cleaning.ipynb` in VS Code or Jupyter Notebook.
+5. Run the notebook cells from top to bottom.
 
 ## Output
 
-The cleaned dataset is saved as:
+The cleaned dataset is provided inside:
 
-`output/cleaned_online_retail.csv`
+`cleaned_online_retail.zip`
 
-It contains 536,641 rows and 8 columns.
+Expected dataset dimensions:
+
+* Rows: 536,641
+* Columns: 8
 
 ## Learning Outcomes
 
@@ -140,5 +112,7 @@ It contains 536,641 rows and 8 columns.
 **Luvkush Saini**
 
 Data Analytics Learner
+
+**Internship:** SWYNEX Technologies
 
 **Project:** Task 1 – Data Cleaning & Preparation
